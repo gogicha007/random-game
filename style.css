@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: #FFEBCC;
+  margin: 0 auto;
+}
+header {
+  height: 20vmin;
+  display: flex;
+  margin: 0;
+  justify-content: space-evenly;
+  align-items: start;
+  background: #FFEBCC;
+}
+h1 {
+  color: #d87055;
+}
+.title-wrapper {
+  width: 70vmin;
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-wrapper h1 {
+  margin: 0;
+}
+.game-rules {
+  width: 30vmin;
+  height: 15vmin;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+.game-rules p {
+  margin: 0;
+}
+.score-board {
+  height: 15vmin;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 7px;
+}
+button {
+  height: 45px;
+  /* border-color: #cdc1b4; */
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+#score-table {
+  position: absolute;
+  top: 25vmin;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+thead {
+  line-height: 40px;
+}
+th {
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+}
+td {
+  color: white;
+  font-size: 18px;
+}
+td:nth-of-type(1) {
+  width: 8vmin;
+  text-align: center;
+}
+td:nth-of-type(2) {
+  width: 45vmin;
+  text-align: center;
+}
+.gd-inner {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: centes;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #DFE0DF
+}
+.gd-inner p {
+  margin: 0;
+  align-self: center;
+}
+.gd-inner button {
+  margin-top: 12px;
+}
+.go-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+.go-inner h1 {
+  margin: 0;
+  color: #FFC1B2
+}
+.go-inner button {
+  margin-top: 10px;
+}
+.go-inner button {
+  width: 170px;
+  height: 45px;
+  border-color: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: 200ms ease-in-out;
+}
+.go-inner button:hover {
+  opacity: 80%
+}
+main {
+  background: #FFEBCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vmin;
+  position: relative;
+}
+#game-board {
+  width: 70vmin;
+  height: 70vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vmin;
+  background-color: #bbada0;
+  border-radius: 1vmin;
+  padding: 2vmin;
+  position: relative;
+}
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: #cdc1b4;
+  border-radius: 1vmin;
+}
+.tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  top: calc(var(--y) * (var(--cell-size) + var(--gap)) + var(--gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--gap)) + var(--gap));
+  background-color: hsl(30, 37%, var(--bg));
+  color: hsl(30, 8%, var(--text));
+  font-weight: bold;
+  border-radius: 1vmin;
+  animation: show 150ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+}
+.merger {
+  animation: mrg 150ms ease-in-out;
+}
+
+@keyframes mrg {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+footer {
+  position: relative;
+  width: 100%;
+  height: 10vmin;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background: #2F4858;
+}
+footer a:hover {
+  color: #bdae82;
+}
+footer img {
+  width: 135px;
+  cursor: pointer;
+  transition: 0.7s ease;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+footer img:hover {
+  filter: brightness(0) invert(0.8);
+  /* transform: translateY(-2px); */
+  /* filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%); */
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #faeaff;
+  cursor: pointer;
+  transition: 0.7s ease;
+}
+.modal {
+  display: none;
+  /* align-items: center; */
+  justify-content: center; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+}
+/* responsives */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  button {
+    font-size: 12px;
+  }
+  footer {
+    justify-content: center;
+    gap: 10px;
+  }
+  footer img {
+    width: 100px;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 18px;
+  }
+  footer p {
+    font-size: 14px;
+  }
+  footer img {
+    width: 80px;
+  }
+}
