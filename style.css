@@ -6,6 +6,9 @@ body {
   background-color: #FFEBCC;
   margin: 0 auto;
 }
+author-name {
+  color: white
+}
 header {
   height: 20vmin;
   display: flex;
@@ -213,10 +216,17 @@ footer img:hover {
   /* filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
     contrast(87%); */
 }
-a {
+/* a {
   font-size: 20px;
   text-decoration: none;
   color: #faeaff;
+  cursor: pointer;
+  transition: 0.7s ease;
+} */
+a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
   cursor: pointer;
   transition: 0.7s ease;
 }
